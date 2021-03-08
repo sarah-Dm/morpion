@@ -1,0 +1,27 @@
+main {
+  width: 100vw;
+  height: 80vh;
+}
+
+main section {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+}
+
+main section > div {
+  border: 1px solid purple;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.won {
+  background-color: green;
+}
+
+.box div {
+  font-size: 60px;
+}
