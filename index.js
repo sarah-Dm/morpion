@@ -1,4 +1,13 @@
-const $boxes = document.querySelectorAll('div');
+const $boxes = document.querySelectorAll('.box');
+
+//commencer le jeu au click sur "Play"
+const $startButton = document.querySelector('button');
+const $pop_up = document.querySelector('.pop_up');
+const startGame = () => {
+  $pop_up.classList.remove('pop_up');
+  $pop_up.classList.add('remove');
+};
+$startButton.addEventListener('click', () => startGame());
 
 //cocher alternativement avec une croix ou un rond
 //1- fixer une variable qui compte le nbre de fois où on appelle la fonction

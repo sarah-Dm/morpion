@@ -1,17 +1,32 @@
-main {
-  width: 100vw;
-  height: 80vh;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Permanent Marker', cursive;
 }
 
-main section {
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+}
+
+#grid {
+  width: 100%;
+  height: 100%;
+}
+
+#grid section {
   width: 100%;
   height: 30%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
-main section > div {
-  border: 1px solid purple;
+#grid section > div {
+  border: 5px solid purple;
   width: 30%;
   display: flex;
   justify-content: center;
@@ -24,4 +39,41 @@ main section > div {
 
 .box div {
   font-size: 60px;
+}
+
+.pop_up {
+  position: absolute;
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  min-height: 25%;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  font-size: 2em;
+  padding: 25px;
+}
+
+.pop_up h2 {
+  text-align: center;
+}
+
+button {
+  padding: 10px;
+  font-size: 1.5em;
+  width: 100%;
+  border: 30px solid rgb(191, 160, 226);
+  border-bottom-color: rgb(45, 2, 95);
+  border-right-color: rgb(45, 2, 95);
+  border-width: 25px 30px 30px 25px;
+}
+
+button:active {
+  box-shadow: 1px 3px 10px 1px rgba(0, 0, 0, 0.3);
+  transform: perspective(100px) translateZ(-5px);
+}
+
+.remove {
+  display: none;
 }
