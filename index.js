@@ -1,4 +1,6 @@
 const $boxes = document.querySelectorAll('.box');
+const me = '❌';
+const bot = '⭕️';
 
 //commencer le jeu au click sur "Play"
 const $startButton = document.querySelector('button');
@@ -12,29 +14,23 @@ $startButton.addEventListener('click', () => startGame());
 //cocher alternativement avec une croix ou un rond
 //1- fixer une variable qui compte le nbre de fois où on appelle la fonction
 let fonctionCall = 0;
-const checkBox = (i) => {
+const checkBox = (event) => {
   //2- faire avancer le curseur à chaque fois que la fonction est appelée
   fonctionCall += 1;
   //3- lier le rond à nbre paire/ la croix à nbre impair
   if (fonctionCall % 2) {
     //créer des éléments DOM ❌
-    const $cross = document.createElement('div');
-    $cross.innerHTML = '❌';
-    $boxes[i].appendChild($cross);
+    event.target.innerHTML = me;
   } else {
     //créer des éléments DOM ⭕️
-    const $circle = document.createElement('div');
-    $circle.innerHTML = '⭕️';
-    $boxes[i].appendChild($circle);
+    event.target.innerHTML = bot;
   }
   checkEndGame();
 };
 
 //lier le cochage au click sur les cases
 $boxes.forEach((box, i) => {
-  box.addEventListener('click', () => {
-    checkBox(i);
-  });
+  box.addEventListener('click', checkBox);
 });
 
 //si les div sont identiques en ligne/colonne/diagonale (contiennent croix ou rond) alors arreter le jeu
