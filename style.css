@@ -33,8 +33,12 @@ main {
   align-items: center;
 }
 
-.won {
-  background-color: green;
+.wonMe {
+  background-color: rgba(7, 97, 7, 0.473);
+}
+
+.wonBot {
+  background-color: rgba(233, 92, 92, 0.575);
 }
 
 .box {
